@@ -6,6 +6,7 @@ alias cp='cp -v'
 alias mv='mv -v'
 alias ln='ln -v'
 alias rm='rm -v'
+alias ls='ls --color=auto'
 
 alias export=' export'
 alias c='pygmentize -O style=monokai -f console256 -g'
@@ -14,7 +15,9 @@ alias v='vim'
 alias tls='tmux list-sessions'
 alias ta='tmux at -t'
 
-alias git='hub'
+if which hub >/dev/null ; then
+    alias git='hub'
+fi
 alias g='git s'
 
 alias pu='phpunit --colors'

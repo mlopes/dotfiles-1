@@ -1,13 +1,13 @@
 [user]
-    name = everzet
-    email = ever.zet@gmail.com
+    name = Sarunas Valaskevicius
+    email = svalaskevicius@inviqa.com
 
 [push]
     default = current
 
 [core]
     quotepath = false
-    excludesfile = /Users/everzet/.gitignore_global
+    excludesfile = ~/.gitignore_global
 
 [interactive]
     singlekey = true
@@ -37,34 +37,22 @@
     bn = checkout -b
     co = checkout
 
-    d  = difftool
-    dc = difftool --cached
+    d  = diff
+    dc = diff --cached
     ds = diff --stat
-    m  = mergetool
+    m  = merge --no-ff
 
     l = log --oneline --graph
-    t = log --graph --full-history --all --color --date=short --pretty=format:\"%Cred%x09%h %Creset%ad%Cblue%d %Creset %s %C(bold)(%an)%Creset\"
+    t = log --graph --full-history --all --color --date=short --pretty=format:\"%Cred%h%Cblue%d %Creset %s %C(green)(%an) %Creset%ad\"
 
-    review = "!f() { local SHA=${1:-HEAD}; local BRANCH=${2:-master}; if [ $SHA == $BRANCH ]; then SHA=HEAD; fi; git difftool -y -t Kaleidoscope $BRANCH...$SHA; }; f"
+    review = "!f() { local SHA=${1:-HEAD}; local BRANCH=${2:-master}; if test "$SHA" = "$BRANCH" ; then SHA=HEAD; fi; git difftool -y -t kdiff3 $BRANCH...$SHA; }; f"
 
 [web]
-    browser = open
-
-[difftool "Kaleidoscope"]
-    cmd = ksdiff --partial-changeset --relative-path \"$MERGED\" -- \"$LOCAL\" \"$REMOTE\"
+    browser = xdg-open
 
 [difftool]
     prompt = false
 
-[diff]
-    tool = Kaleidoscope
-
-[mergetool "Kaleidoscope"]
-    cmd = ksdiff --merge --output \"$MERGED\" --base \"$BASE\" -- \"$LOCAL\" --snapshot \"$REMOTE\" --snapshot
-    trustExitCode = true
-
 [mergetool]
     prompt = false
 
-[merge]
-    tool = Kaleidoscope

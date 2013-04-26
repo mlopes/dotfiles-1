@@ -9,7 +9,8 @@ zstyle ':completion:*' menu yes select
 zstyle ':completion:*' use-cache on
 zstyle ':completion:*' cache-path ~/.zsh/cache
 
-setopt APPEND_HISTORY HIST_IGNORE_ALL_DUPS HIST_IGNORE_SPACE HIST_REDUCE_BLANKS AUTO_CD BSD_ECHO PROMPT_SUBST
+# setopt APPEND_HISTORY HIST_IGNORE_ALL_DUPS HIST_IGNORE_SPACE HIST_REDUCE_BLANKS AUTO_CD BSD_ECHO PROMPT_SUBST
+setopt APPEND_HISTORY HIST_IGNORE_ALL_DUPS HIST_IGNORE_SPACE HIST_REDUCE_BLANKS AUTO_CD PROMPT_SUBST
 HISTSIZE=100
 SAVEHIST=100
 HISTFILE=~/.zsh/history
@@ -41,4 +42,6 @@ if [ -e $HOME/.ssh/known_hosts ] ; then
     zstyle ':completion:*:hosts' hosts $hosts
 fi
 
-PROMPT='%{$fg[black]%}%{$bg[white]%} %~ %{$reset_color%}%{$bg[black]%}%{$fg[white]%}%{$reset_color%}%{$bg[black]%}$(git_cwd_info)%{$reset_color%}%{$fg[black]%}%{$reset_color%}%(?.%{$fg[green]%}.%{$fg[red]%})$(print "\n■ ")%{$reset_color%}'
+PROMPT='%{$fg[blue]%}%{$bg[black]%} %~ %{$reset_color%}%{$bg[black]%}$(git_cwd_info)%{$reset_color%}%(?.%{$fg[green]%}.%{$fg[red]%})$(print "■ ")%{$reset_color%}'
+
+
