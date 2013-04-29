@@ -216,18 +216,18 @@ vnoremap >     >gv
 "
 "  MOVEMENT COMBINATIONS TUNING
 "
-nnoremap <up>    <nop>
-nnoremap <down>  <nop>
-nnoremap <left>  <nop>
-nnoremap <right> <nop>
-inoremap <up>    <nop>
-inoremap <down>  <nop>
-inoremap <left>  <nop>
-inoremap <right> <nop>
-vnoremap <S-h>   <nop>
-vnoremap <S-j>   <nop>
-vnoremap <S-k>   <nop>
-vnoremap <S-l>   <nop>
+" nnoremap <up>    <nop>
+" nnoremap <down>  <nop>
+" nnoremap <left>  <nop>
+"nnoremap <right> <nop>
+"inoremap <up>    <nop>
+"inoremap <down>  <nop>
+"inoremap <left>  <nop>
+"inoremap <right> <nop>
+"vnoremap <S-h>   <nop>
+"vnoremap <S-j>   <nop>
+"vnoremap <S-k>   <nop>
+"vnoremap <S-l>   <nop>
 
 "
 """"""""""""""""""""""""""""""""""""""""
