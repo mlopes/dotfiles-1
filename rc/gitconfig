@@ -28,12 +28,15 @@
 
 [alias]
     s  = status -s
+    st = status 
     a  = add
     c  = commit -v
+    ci = commit
     ca = commit -av
     u  = reset HEAD
 
     b  = branch
+    br = branch
     bn = checkout -b
     co = checkout
 
@@ -43,7 +46,7 @@
     m  = merge --no-ff
 
     l = log --oneline --graph
-    t = log --graph --full-history --all --color --date=short --pretty=format:\"%Cred%h%Cblue%d %Creset %s %C(green)(%an) %Creset%ad\"
+    lg = log --graph --full-history --all --color --date=short --pretty=format:\"%Cred%h%Cblue%d %Creset %s %C(green)(%an) %Creset%ad\"
 
     review = "!f() { local SHA=${1:-HEAD}; local BRANCH=${2:-master}; if test "$SHA" = "$BRANCH" ; then SHA=HEAD; fi; git difftool -y -t kdiff3 $BRANCH...$SHA; }; f"
 
