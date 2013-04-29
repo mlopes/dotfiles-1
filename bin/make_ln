@@ -21,6 +21,19 @@ ln -nfs $DOTDIR/rc/gitignore_global ~/.gitignore_global
 ln -nfs $DOTDIR/rc/teamocil         ~/.teamocil
 ln -nfs $DOTDIR/rc/powerline        ~/.config/powerline
 
+ln -Tnfs $DOTDIR/urxvt               ~/.urxvt
+ln -Tnfs $DOTDIR/xmonad              ~/.xmonad
+ln -nfs $DOTDIR/rc/bashrc            ~/.bashrc
+ln -nfs $DOTDIR/rc/Xdefaults         ~/.Xdefaults
+
+pushd ~/.xmonad/
+. ~/.xmonad/build_threaded
+popd
+
+if which xrdb >>/dev/null ; then
+    xrdb merge ~/.Xdefaults
+fi
+
 # sudo ln -nfs $DOTDIR/rc/resolver/dev /etc/resolver/dev
 
 if [ -d /usr/local/php5 ]; then
