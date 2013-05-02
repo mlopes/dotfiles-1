@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 DOTDIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )/.." && pwd )"
 
@@ -25,6 +25,7 @@ ln -Tnfs $DOTDIR/urxvt               ~/.urxvt
 ln -Tnfs $DOTDIR/xmonad              ~/.xmonad
 ln -nfs $DOTDIR/rc/bashrc            ~/.bashrc
 ln -nfs $DOTDIR/rc/Xdefaults         ~/.Xdefaults
+ln -nfs $DOTDIR/rc/xsessionrc        ~/.xsessionrc
 
 pushd ~/.xmonad/
 . ~/.xmonad/build_threaded
