@@ -9,6 +9,15 @@ export PATH=~/bin/dotfiles/scripts:$PATH
 export PATH=./vendor/bin:$PATH
 export PATH=./bin:$PATH
 
+
+export BROWSER=chromium-browser
+
+export PATH="$HOME/bin:$PATH"
+export PATH=$PATH:~/.cabal/bin:~/.xmonad/bin
+export PATH=$PATH:~/.gem/ruby/1.9.1/bin
+
+
+
 # editors
 export EDITOR='vim'
 export GIT_EDITOR='vim'
