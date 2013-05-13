@@ -27,6 +27,9 @@ ln -nfs $DOTDIR/rc/bashrc            ~/.bashrc
 ln -nfs $DOTDIR/rc/Xdefaults         ~/.Xdefaults
 ln -nfs $DOTDIR/rc/xsessionrc        ~/.xsessionrc
 
+mkdir -p ~/.config/fish
+ln -fs $DOTDIR/rc/config.fish ~/.config/fish/
+
 pushd ~/.xmonad/
 . ~/.xmonad/build_threaded
 popd
@@ -44,3 +47,16 @@ fi
 if [ -d /etc/apache2/users ]; then
     sudo ln -nfs $DOTDIR/rc/apache/autohosts.conf /etc/apache2/users/autohosts.conf
 fi
+
+mkdir -p ~/.fonts/
+ln -fs $DOTDIR/powerline/font/PowerlineSymbols.otf ~/.fonts/
+
+mkdir -p ~/.fonts.conf.d/
+ln -fs $DOTDIR/powerline/font/10-powerline-symbols.conf ~/.fonts.conf.d/
+
+mkdir -p ~/.config/fontconfig/conf.d/
+ln -fs $DOTDIR/powerline/font/10-powerline-symbols.conf ~/.config/fontconfig/conf.d/
+
+fc-cache -vf ~/.fonts
+
+
