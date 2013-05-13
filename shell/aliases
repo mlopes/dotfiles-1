@@ -22,3 +22,6 @@ alias g='git s'
 
 alias pu='phpunit --colors'
 alias sf='app/console'
+
+alias release_log="git log --pretty=oneline --merges master..HEAD | grep -oe '\(branch\|request\).*' | cut -d' ' -f 2- | sed -e 's/into.*$//g' -e 's#origin/##g' | sort | uniq"
+
