@@ -77,10 +77,15 @@ end
 
 def nr_of_pending_changes
     if git_current_branch
-        `git log --oneline origin/#{git_current_branch}..#{git_current_branch} | wc -l`.chomp
+        changes = `git log --oneline origin/#{git_current_branch}..#{git_current_branch} | wc -l`.chomp
+        if changes=="0"
+            ""
+        else
+            ":#{GREEN}#{changes}"
+        end
     end
 end
 
 if in_git_repo
-  print "#{GRAY}#{git_parse_branch}:#{GREEN}#{nr_of_pending_changes}#{rebasing_etc}#{git_cwd_dirty}#{NO_COLOUR} "
+  print "#{GRAY}#{git_parse_branch}#{nr_of_pending_changes}#{rebasing_etc}#{git_cwd_dirty}#{NO_COLOUR} "
 end
