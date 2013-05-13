@@ -48,9 +48,13 @@ def in_git_repo
   git_repo_path != "#{ENV['HOME']}/.git"
 end
 
-def git_parse_branch
+def git_current_branch
   path = File.dirname(__FILE__)
-  @git_parse_branch ||= `#{path}/git_current_branch | sed -e 's-\\(\\(^\\|/\\)[^/]\\)\\([^/]*\\)/-\\1/-g'`.chomp
+  @git_current_branch ||= `#{path}/git_current_branch`.chomp
+end
+
+def git_parse_branch
+  git_current_branch.gsub /((^|\/)[^\/])([^\/]*)\//, '\1/'
 end
 
 def git_head_commit_id
