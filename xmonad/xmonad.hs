@@ -35,7 +35,7 @@ import XMonad.Hooks.EwmhDesktops
 -- The preferred terminal program, which is used in a binding below and by
 -- certain contrib modules.
 --
-myTerminal = "/usr/bin/urxvt +ls"
+myTerminal = "/usr/bin/urxvt +ls -e fish -l"
 
 
 ------------------------------------------------------------------------

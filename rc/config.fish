@@ -1,5 +1,5 @@
 if status --is-login
-	for p in /usr/bin /usr/local/bin /opt/local/bin ~/bin ~/.config/fish/bin 
+	for p in /usr/bin /usr/local/bin /opt/local/bin ~/bin ~/.config/fish/bin ~/bin/dotfiles/scripts
 		if test -d $p
 			set PATH $p $PATH
 		end
