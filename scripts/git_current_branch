@@ -5,4 +5,5 @@
 # AUTHOR:
 #  Geoffrey Grosenbach http://peepcode.com
 
-git symbolic-ref -q HEAD | sed -e 's|^refs/heads/||'
+git symbolic-ref -q HEAD | sed -e 's|^refs/heads/||' -e 's-\(\(^\|/\)[^/]\)\([^/]*\)/-\1/-g'
+
