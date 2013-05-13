@@ -12,7 +12,7 @@ call pathogen#infect()
 "  HIGHLIGHTING
 "
 syntax on
-colo elflord
+colorscheme mustango
 se cursorline
 se listchars=tab:▸\ ,trail:□,eol:¬
 
