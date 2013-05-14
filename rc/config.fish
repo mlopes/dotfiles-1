@@ -16,7 +16,7 @@ function fish_prompt -d "Write out the prompt"
 
     # Color writeable dirs green, read-only dirs red
     if test -w "."
-        printf ' %s%s' (set_color green) (prompt_pwd)
+        printf ' %s%s' (set_color 8A7) (prompt_pwd)
     else
         printf ' %s%s' (set_color red) (prompt_pwd)
     end
