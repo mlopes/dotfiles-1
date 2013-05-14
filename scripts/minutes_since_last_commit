@@ -1,3 +1,5 @@
+#!/bin/sh
+
 now=`date +%s`
 last_commit=`git log --pretty=format:'%at' -1`
 seconds_since_last_commit=$((now-last_commit))
