@@ -87,5 +87,5 @@ def nr_of_pending_changes
 end
 
 if in_git_repo
-  print "#{GRAY}#{git_parse_branch}#{nr_of_pending_changes}#{rebasing_etc}#{git_cwd_dirty}#{NO_COLOUR} "
+  print "#{GRAY}#{git_parse_branch}#{nr_of_pending_changes}#{rebasing_etc}#{git_cwd_dirty}#{NO_COLOUR}"
 end
