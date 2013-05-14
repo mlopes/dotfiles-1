@@ -5,5 +5,5 @@
 # AUTHOR:
 #  Geoffrey Grosenbach http://peepcode.com
 
-git name-rev --name-only HEAD
+git symbolic-ref -q HEAD | sed -e 's|^refs/heads/||'
 
