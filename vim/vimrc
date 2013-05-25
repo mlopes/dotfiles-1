@@ -131,8 +131,8 @@ se formatoptions=qrn1
 "
 let mapleader = ","
 let maplocalleader = "\\"
-inoremap jk <esc>
-inoremap <esc> <nop>
+" inoremap jk <esc>
+" inoremap <esc> <nop>
 nnoremap Y y$
 
 "
