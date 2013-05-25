@@ -77,11 +77,16 @@ end
 
 def nr_of_pending_changes
     if git_current_branch
-        changes = `git log --oneline origin/#{git_current_branch}..#{git_current_branch} | wc -l`.chomp
-        if changes=="0"
-            ""
+        git_dir=`git rev-parse --git-dir`.chomp
+        if File.exist?(git_dir+"/refs/remotes/origin/#{git_current_branch}")
+            changes = `git log --oneline origin/#{git_current_branch}..#{git_current_branch} | wc -l`.chomp
+            if changes=="0"
+                ""
+            else
+                ":#{GREEN}#{changes}"
+            end
         else
-            ":#{GREEN}#{changes}"
+            ":#{RED}!"
         end
     end
 end
