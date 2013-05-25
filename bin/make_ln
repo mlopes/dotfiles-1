@@ -38,7 +38,9 @@ if which xrdb >>/dev/null ; then
     xrdb merge ~/.Xdefaults
 fi
 
-# sudo ln -nfs $DOTDIR/rc/resolver/dev /etc/resolver/dev
+if [ -d /etc/resolver ]; then
+    sudo ln -nfs $DOTDIR/rc/resolver/dev /etc/resolver/dev
+fi
 
 if [ -d /usr/local/php5 ]; then
     ln -nfs $DOTDIR/rc/php/*.ini /usr/local/php5/php.d/
