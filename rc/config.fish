@@ -1,5 +1,5 @@
 if status --is-login
-	for p in /usr/bin /usr/local/bin /opt/local/bin ~/bin ~/.config/fish/bin ~/bin/dotfiles/scripts
+	for p in /usr/bin /usr/local/bin /opt/local/bin ~/bin ~/.config/fish/bin ~/bin/dotfiles/scripts ~/.cabal/bin ~/.xmonad/bin ~/.gem/ruby/1.9.1/bin
 		if test -d $p
 			set PATH $p $PATH
 		end
@@ -10,6 +10,9 @@ end
 
 set fish_greeting ""
 set -x CLICOLOR 1
+set -x EDITOR vim
+set -x BROWSER chromium-browser
+
 
 function fish_prompt -d "Write out the prompt"
 	# printf '%s%s@%s%s' (set_color brown) (whoami) (hostname|cut -d . -f 1) (set_color normal) 

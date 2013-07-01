@@ -47,13 +47,14 @@ se backspace=indent,eol,start
 se wildignore+=*/.git/*,*/.hg/*,*/.svn/*,*/*cache,*/logs,*/web/bundles,.DS_Store
 se path=**
 
+let g:syntastic_cpp_compiler_options = "-std=c++11"
 "
 """"""""""""""""""""""""""""""""""""""""
 "
 "  FOLDING
 "
-se foldmethod=syntax
-se foldlevel=1
+" se foldmethod=syntax
+" se foldlevel=1
 
 "
 """"""""""""""""""""""""""""""""""""""""
@@ -66,6 +67,7 @@ se showmatch
 se ignorecase
 se smartcase
 se gdefault
+se tags=tags;/
 se tags+=vendor.tags
 
 "
@@ -128,8 +130,6 @@ se formatoptions=qrn1
 """"""""""""""""""""""""""""""""""""""""
 "
 "  GENERAL OVERRIDINGS
-"
-let mapleader = ","
 let maplocalleader = "\\"
 " inoremap jk <esc>
 " inoremap <esc> <nop>
@@ -477,7 +477,7 @@ if has('autocmd')
 
     augroup FileTypes
         autocmd!
-        au BufRead,BufNewFile *.php         setlocal filetype=php iskeyword-=$ iskeyword-=_
+        au BufRead,BufNewFile *.php         setlocal filetype=php iskeyword-=$ " iskeyword-=_
         au BufRead,BufNewFile *.php         inoremap <buffer> § $
         au BufRead,BufNewFile *.php         inoremap <buffer> ± ->
         au BufRead,BufNewFile *.php         inoremap <buffer> §§ $this->
