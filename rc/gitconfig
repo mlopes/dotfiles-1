@@ -47,6 +47,7 @@
 
     l = log --oneline --graph
     lg = log --graph --color --full-history --date=short --pretty=format:\"%Cred%h%Cblue%d %Creset %s %C(green)(%an) %Creset%ad\"
+    t = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
     lgall = log --graph --full-history --all --color --date=short --pretty=format:\"%Cred%h%Cblue%d %Creset %s %C(green)(%an) %Creset%ad\"
 
     review = "!f() { local SHA=${1:-HEAD}; local BRANCH=${2:-master}; if test "$SHA" = "$BRANCH" ; then SHA=HEAD; fi; git difftool -y -t kdiff3 $BRANCH...$SHA; }; f"
