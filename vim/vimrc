@@ -5,6 +5,7 @@
 "    `:Helptags` to regenerate docs
 "
 call pathogen#infect()
+call pathogen#helptags()
 
 "
 """"""""""""""""""""""""""""""""""""""""
