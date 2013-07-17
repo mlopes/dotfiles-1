@@ -1,5 +1,5 @@
 #!/bin/bash
 
-xmodmap $HOME/.xmodmaprc
+test -f $HOME/.xmodmaprc && xmodmap $HOME/.xmodmaprc
 . $HOME/.shell/env
 
