@@ -61,4 +61,6 @@ ln -fs $DOTDIR/powerline/font/10-powerline-symbols.conf ~/.config/fontconfig/con
 
 fc-cache -vf ~/.fonts
 
+# for mate 1.6:
+# gsettings set org.mate.session.required-components windowmanager xmonad
 
