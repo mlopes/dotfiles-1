@@ -1,5 +1,5 @@
 if status --is-login
-	for p in /usr/bin /usr/local/bin /opt/local/bin ~/bin ~/.config/fish/bin ~/bin/dotfiles/scripts ~/.cabal/bin ~/.xmonad/bin ~/.gem/ruby/1.9.1/bin
+	for p in /usr/bin /usr/local/bin /opt/local/bin ~/bin ~/.config/fish/bin ~/bin/dotfiles/scripts ~/.cabal/bin ~/.xmonad/bin ~/.gem/ruby/1.9.1/bin ~/bin/nest/bin
 		if test -d $p
 			set PATH $p $PATH
 		end
@@ -31,4 +31,6 @@ function fish_prompt -d "Write out the prompt"
 
 	printf '%s [%s]%s> ' (set_color 62A) (date +%H:%M) (set_color normal)
 end
+
+alias !=xdg-open
 

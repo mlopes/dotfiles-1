@@ -499,3 +499,12 @@ if has('autocmd')
         au BufWrite * :call <sid>MkdirsIfNotExists(expand('<afile>:h'))
     augroup END
 endif
+
+let g:vdebug_options = {}
+let g:vdebug_options['path_maps'] = {"/mnt/project": "/home/sarunas/dev/hackett/hackett.development.local"}
+let g:vdebug_options['server'] = "10.1.1.1"
+
+if has('gui_running')
+    set guifont=Ubuntu\ Mono\ 12
+endif
+
