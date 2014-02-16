@@ -33,4 +33,18 @@ function fish_prompt -d "Write out the prompt"
 end
 
 alias !=xdg-open
+alias !bev='bundle exec vagrant'
+
+alias git='GIT_AUTHOR_EMAIL=$(
+      p="$(pwd)"
+      while [[ "$p" != "$HOME" -a "$p" != "/" ]]; do
+        [ -e "$p/.gitemail" ] && cat "$p/.gitemail" && break
+        p=$(dirname "$p")
+      done) GIT_COMMITTER_EMAIL=$(
+      p=$(pwd)
+      while [[ "$p" != "$HOME" -a "$p" != "/" ]]; do
+        [ -e "$p/.gitemail" ] && cat "$p/.gitemail" && break
+        p=$(dirname "$p")
+      done) /usr/bin/git'
+alias g=git
 
