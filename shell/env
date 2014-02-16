@@ -1,10 +1,12 @@
 # paths
 export PATH=/usr/local/sbin:$PATH
-export PATH=/usr/local/Cellar/go/1.0.3/bin:$PATH
+export PATH=/usr/local/opt/ruby/bin:$PATH
+export PATH=/usr/local/opt/go/bin:$PATH
 export PATH=/usr/local/share/npm/bin:$PATH
 export PATH=/usr/local/php5/bin:$PATH
 export PATH=/usr/local/bin:$PATH
 export PATH=~/bin/dotfiles/scripts:$PATH
+export PATH=~/.composer/vendor/bin:$PATH
 export PATH=./vendor/bin:$PATH
 export PATH=./bin:$PATH
 
@@ -25,7 +27,7 @@ export GIT_EDITOR='vim'
 # modules
 export JS_CMD="node"
 export NODE_PATH="/usr/local/lib/node_modules"
-export PHP_PEAR_PHP_BIN="/usr/bin/php"
+export PHP_PEAR_PHP_BIN="/usr/local/php5/bin/php"
 
 # term colors
 export CLICOLOR=1

@@ -95,10 +95,10 @@ se expandtab
 "
 "  AUTOCOMPLETION
 "
-se wildcharm=<tab>
-se wildmenu
-se wildmode=full
-inoremap <c-l> <c-x><c-l>
+"se wildcharm=<tab>
+"se wildmenu
+"se wildmode=full
+"inoremap <c-l> <c-x><c-l>
 
 "
 """"""""""""""""""""""""""""""""""""""""
@@ -259,9 +259,10 @@ nnoremap * *N
 "|
 """"""""""""""""""""""""""""""""""""""""
 "
-"  POWERLINE
+"  AIRLINE
 "
-set rtp+=~/.powerline/powerline/bindings/vim
+let g:airline_powerline_fonts=1
+let g:airline_theme='wombatish'
 
 "
 """"""""""""""""""""""""""""""""""""""""
@@ -278,29 +279,9 @@ nnoremap <leader>gmv :Gmove<cr>
 "
 """"""""""""""""""""""""""""""""""""""""
 "
-"  GITGUTTER
-"
-let g:gitgutter_enabled = 1
-let g:gitgutter_highlights = 0
-
-"
-""""""""""""""""""""""""""""""""""""""""
-"
 "  ACK
 "
 nnoremap <expr><leader>a ":Ack! "
-
-"
-""""""""""""""""""""""""""""""""""""""""
-"
-"  NEOCOMPLCACHE
-"
-let g:neocomplcache_enable_at_startup = 1
-let g:neocomplcache_enable_ignore_case = 0
-let g:neocomplcache_enable_camel_case_completion = 1
-let g:neocomplcache_enable_underbar_completion = 1
-let g:neocomplcache_temporary_dir = '~/.neocomplcache'
-set completeopt-=preview
 
 "
 """"""""""""""""""""""""""""""""""""""""
@@ -360,6 +341,15 @@ nnoremap <leader>y :YRShow<cr>
 "  EASYMOTION
 "
 let g:EasyMotion_leader_key='t'
+
+"
+""""""""""""""""""""""""""""""""""""""""
+"
+"  SYNTASTIC
+"
+let g:syntastic_mode_map = { 'mode': 'active',
+                           \ 'active_filetypes': [],
+                           \ 'passive_filetypes': ['html', 'twig', 'css', 'scss', ''] }
 
 "
 """"""""""""""""""""""""""""""""""""""""
