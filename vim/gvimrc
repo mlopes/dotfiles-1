@@ -10,7 +10,8 @@ se showtabline=1          " show tabs only if needed
 " se fu
 
 function! DefFont()
-    se guifont=ProFontX\ for\ PowerLine:h12
+    " se guifont=ProFontX\ for\ PowerLine:h12
+    set guifont="Ubuntu Mono 12"
 endfunction
 
 function! BigFont()
