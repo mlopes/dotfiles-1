@@ -45,7 +45,7 @@ function git -d "git wrapper"
         end
         set -l p (dirname "$p")
     end
-    eval (which git) $argv
+    /usr/bin/git $argv
 end
 
 alias g=git
