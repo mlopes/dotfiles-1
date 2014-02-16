@@ -1,1 +1,2 @@
 binroot = /usr/local/bin
+registry = http://registry.npmjs.org/
