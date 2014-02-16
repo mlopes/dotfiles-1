@@ -28,12 +28,12 @@ URxvt.tabbed.tab-fg:    			4
 URxvt.tabbed.tab-bg:    			0	
 URxvt*termName:				 	rxvt-256color
 ! URxvt*termName:				 	rxvt
-URxvt.urlLauncher:				/usr/bin/xdg-open
+! URxvt.urlLauncher:				/usr/bin/xdg-open
 URxvt.matcher.button:				1
 
 URxvt*loginShell:true
-URxvt*transparent:true
-URxvt*shading:15
+URxvt*transparent:false
+URxvt*shading:5
 
 ! how many lines you want it to save per session
 URxvt*saveLines:32767
@@ -45,7 +45,7 @@ URxvt*font: xft:Ubuntu Mono:pixelsize=16
 URxvt*urgentOnBell: true
 
 ! dont forget to change this to your favorite browser
-URxvt*urlLauncher: chromium-browser
+! URxvt*urlLauncher: chromium-browser
 
 
 URxvt.keysym.Shift-Control-V: perl:clipboard:paste
@@ -63,9 +63,10 @@ URxvt.iso14755: False
 !-----------------------------------
 !black
 URxvt.color0:  #000000
-URxvt.color8:  #2B2B2B
+URxvt.color8:  #404040
 !red
-URxvt.color1:  #A5372E
+URxvt.color1:  #A5372E 
+! #aB2B2B
 URxvt.color9:  #E06C5C
 !green
 URxvt.color2:  #4A663C
@@ -86,6 +87,6 @@ URxvt.color14: #A28D73
 URxvt.color7:  #8D8D8D
 URxvt.color15: #C6C6C6
 
-URxvt.background: [80]#101010
-URxvt.foreground: 15
+urxvt*background: [95]#081012
+urxvt*foreground: 15
 
