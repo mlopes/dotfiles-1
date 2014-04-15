@@ -39,7 +39,8 @@ URxvt*shading:5
 URxvt*saveLines:32767
 ! URxvt*troughColor:#000000
 URxvt*letterSpace: -1
-URxvt*font: xft:Ubuntu Mono:pixelsize=16
+! URxvt*font: xft:Ubuntu Mono:pixelsize=16
+URxvt*font: xft:Ubuntu Mono derivative Powerline:pixelsize=16
 
 ! with this set to true, when an app sends a bell to the terminal, awesome hilights the appropriate tag(s) 
 URxvt*urgentOnBell: true

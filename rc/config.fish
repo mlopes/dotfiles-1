@@ -7,6 +7,7 @@ if status --is-login
 end
 
 
+set PATH ~/.rbenv/shims $PATH
 
 set fish_greeting ""
 set -x CLICOLOR 1
