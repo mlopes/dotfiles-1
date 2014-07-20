@@ -30,7 +30,7 @@ function fish_prompt -d "Write out the prompt"
         printf ' %s' "$gitinfo"
     end
 
-	printf '%s [%s]%s> ' (set_color 62A) (date +%H:%M) (set_color normal)
+	printf '%s [%s]%s> ' (set_color 97A) (date +%H:%M) (set_color normal)
 end
 
 alias !=xdg-open
