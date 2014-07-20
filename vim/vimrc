@@ -497,3 +497,7 @@ let g:vdebug_options['server'] = "10.1.1.1"
 let g:syntastic_mode_map = { 'mode': 'passive', 'active_filetypes': [],'passive_filetypes': [] }
 nnoremap <C-w>E :SyntasticCheck<CR> :SyntasticToggleMode<CR>
 
+" nmap <C-S-V> "+gP
+" imap <C-S-V> <ESC><C-S-V>i
+vmap <C-C> "+y
+

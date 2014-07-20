@@ -3,6 +3,7 @@
 "  MacVim GUI configuration
 "
 se go-=r                  " no right scroll
+se go-=m                  " no menu
 se go-=L                  " no left scroll
 se go-=T                  " no toolbar
 se showtabline=1          " show tabs only if needed
@@ -15,7 +16,8 @@ function! DefFont()
 endfunction
 
 function! BigFont()
-    se guifont=Menlo:h18
+    " se guifont=Menlo:h18
+    set guifont="Ubuntu Mono 14"
 endfunction
 
 if has("gui_macvim")
@@ -23,3 +25,5 @@ if has("gui_macvim")
 endif
 
 call DefFont()
+
+se visualbell t_vb=
