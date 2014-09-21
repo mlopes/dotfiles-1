@@ -10,14 +10,14 @@ ln -nfs $DOTDIR/vim        ~/.vim
 ln -nfs $DOTDIR/vim/vimrc  ~/.vimrc
 ln -nfs $DOTDIR/vim/gvimrc ~/.gvimrc
 
-ln -nfs $DOTDIR/rc/zshrc            ~/.zshrc
+# ln -nfs $DOTDIR/rc/zshrc            ~/.zshrc
 ln -nfs $DOTDIR/rc/tmux.conf        ~/.tmux.conf
 ln -nfs $DOTDIR/rc/npmrc            ~/.npmrc
 ln -nfs $DOTDIR/rc/jslintrc         ~/.jslintrc
 ln -nfs $DOTDIR/rc/ghci             ~/.ghci
 ln -nfs $DOTDIR/rc/gitconfig        ~/.gitconfig
 ln -nfs $DOTDIR/rc/gitignore_global ~/.gitignore_global
-ln -nfs $DOTDIR/rc/teamocil         ~/.teamocil
+# ln -nfs $DOTDIR/rc/teamocil         ~/.teamocil
 
 ln -Tnfs $DOTDIR/urxvt               ~/.urxvt
 ln -Tnfs $DOTDIR/xmonad              ~/.xmonad
@@ -36,23 +36,20 @@ if which xrdb >>/dev/null ; then
     xrdb merge ~/.Xdefaults
 fi
 
-if [ -d /etc/resolver ]; then
-    sudo ln -nfs $DOTDIR/rc/resolver/dev /etc/resolver/dev
-fi
+# if [ -d /etc/resolver ]; then
+#     sudo ln -nfs $DOTDIR/rc/resolver/dev /etc/resolver/dev
+# fi
 
-if [ -d /usr/local/php5 ]; then
-    ln -nfs $DOTDIR/rc/php/*.ini /usr/local/php5/php.d/
-fi
+# if [ -d /usr/local/php5 ]; then
+#    ln -nfs $DOTDIR/rc/php/*.ini /usr/local/php5/php.d/
+# fi
 
-if [ -d /etc/apache2/users ]; then
-    sudo ln -nfs $DOTDIR/rc/apache/autohosts.conf /etc/apache2/users/autohosts.conf
-fi
+#if [ -d /etc/apache2/users ]; then
+#    sudo ln -nfs $DOTDIR/rc/apache/autohosts.conf /etc/apache2/users/autohosts.conf
+# fi
 
 mkdir -p ~/.fonts/
 ln -fs $DOTDIR/powerline/font/PowerlineSymbols.otf ~/.fonts/
-
-mkdir -p ~/.fonts.conf.d/
-ln -fs $DOTDIR/powerline/font/10-powerline-symbols.conf ~/.fonts.conf.d/
 
 mkdir -p ~/.config/fontconfig/conf.d/
 ln -fs $DOTDIR/powerline/font/10-powerline-symbols.conf ~/.config/fontconfig/conf.d/
