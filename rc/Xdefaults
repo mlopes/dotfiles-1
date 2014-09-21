@@ -1,6 +1,6 @@
 
 ! Xft settings --------------------------------
-Xft.dpi:        96
+Xft.dpi:        72
 Xft.antialias:  true
 Xft.rgba:       rgb
 Xft.hinting:    true
@@ -39,8 +39,13 @@ URxvt*shading:5
 URxvt*saveLines:32767
 ! URxvt*troughColor:#000000
 URxvt*letterSpace: -1
-! URxvt*font: xft:Ubuntu Mono:pixelsize=16
-URxvt*font: xft:Ubuntu Mono derivative Powerline:pixelsize=16
+! URxvt*font: xft:Ubuntu Mono:pixelsize=16,xft:PowerlineSymbols:slant=0:weight=100:pixelsize=14
+! URxvt*font: xft:Ubuntu Mono derivative Powerline:pixelsize=14:antialias=true:autohint=true
+! URxvt*font: xft:Source Code Pro for Powerline:pixelsize=14:antialias=true:autohint=true
+URxvt*font: xft:Source Code Pro for Powerline:pixelsize=14:style=Regular:antialias=true:autohint=true
+URxvt*boldFont: xft:Source Code Pro for Powerline:pixelsize=14:style=Semibold:antialias=true:autohint=true
+URxvt*italicFont: xft:Source Code Pro for Powerline:pixelsize=14:style=Light:antialias=true:autohint=true
+URxvt*bolditalicFont: xft:Source Code Pro for Powerline:pixelsize=14:style=Bold:antialias=true:autohint=true
 
 ! with this set to true, when an app sends a bell to the terminal, awesome hilights the appropriate tag(s) 
 URxvt*urgentOnBell: true
