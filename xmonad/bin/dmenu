@@ -4,5 +4,5 @@
 # http://github.com/vicfryzel/xmonad-config
 
 
-/usr/bin/dmenu -fn '-*-terminus-*-r-normal-*-*-120-*-*-*-*-iso8859-*' \
-  -nb '#000000' -nf '#FFFFFF' -sb '#7C7C7C' -sf '#CEFFAC'
+$HOME/.xmonad/deps/dmenu/dmenu -fn 'Source Code Pro-24' \
+  -nb '#203040' -nf '#e0e590' -sb '#102030' -sf '#e5e080'
