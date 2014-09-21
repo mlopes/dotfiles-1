@@ -8,7 +8,7 @@ import XMonad
 import XMonad.Hooks.DynamicLog
 import XMonad.Hooks.ManageDocks
 import XMonad.Hooks.ManageHelpers
-import XMonad.Hooks.SetWMName
+-- import XMonad.Hooks.SetWMName
 -- import XMonad.Layout.Fullscreen
 import XMonad.Layout.NoBorders
 import XMonad.Layout.Spiral
@@ -42,7 +42,7 @@ myTerminal = "/usr/bin/urxvt +ls -e fish -l"
 -- Workspaces
 -- The default number of workspaces (virtual screens) and their names.
 --
-myWorkspaces = ["1:term","2:web","3:code","4:vm","5:media"] ++ map show [6..9]
+myWorkspaces = ["web","term","code","mail","skype"] ++ map show [6..9]
  
 
 ------------------------------------------------------------------------
@@ -60,16 +60,14 @@ myWorkspaces = ["1:term","2:web","3:code","4:vm","5:media"] ++ map show [6..9]
 -- 'className' and 'resource' are used below.
 --
 myManageHook = composeAll
-    [ className =? "Google-chrome"  --> doShift "1:web"
+    [ className =? "Google-chrome"  --> doShift "web"
     , resource  =? "desktop_window" --> doIgnore
-    , className =? "Galculator"     --> doFloat
+    -- , className =? "URxvt"          --> doShift "term"
     , className =? "Steam"          --> doFloat
     , className =? "Gimp"           --> doFloat
     , resource  =? "gpicview"       --> doFloat
     , className =? "MPlayer"        --> doFloat
-    , className =? "VirtualBox"     --> doShift "5:vm"
-    , className =? "Xchat"          --> doShift "6:media"
---    , isFullscreen --> (doF W.focusDown <+> doFullFloat)
+    -- , isFullscreen --> (doF W.focusDown <+> doFullFloat)
     , isFullscreen --> doFullFloat
     ]
 
@@ -98,7 +96,7 @@ myLayout = avoidStruts (
 -- Currently based on the ir_black theme.
 --
 myNormalBorderColor  = "#7c7c7c"
-myFocusedBorderColor = "#ff4640"
+myFocusedBorderColor = "#ff7660"
 
 -- Colors for text and backgrounds of each tab when in "Tabbed" layout.
 tabConfig = defaultTheme {
@@ -135,12 +133,12 @@ myKeys conf@(XConfig {XMonad.modMask = modMask}) = M.fromList $
 
   -- Lock the screen using xscreensaver.
   , ((modMask .|. controlMask, xK_l),
-     spawn "xscreensaver-command -lock")
+     spawn "gnome-screensaver-command -l")
 
   -- Launch dmenu via yeganesh.
   -- Use this to launch programs without a key binding.
   , ((modMask, xK_p),
-     spawn "exe=`/home/sarunas/bin/dmenu_path_c | /home/sarunas/.cabal/bin/yeganesh` && eval \"exec $exe\"")
+     spawn "exe=`/home/sarunas/bin/dmenu-path-c | yeganesh` && eval \"exec $exe\"")
 
   -- Take a screenshot in select mode.
   -- After pressing this key binding, click a window, or draw a rectangle with
@@ -152,10 +150,6 @@ myKeys conf@(XConfig {XMonad.modMask = modMask}) = M.fromList $
   -- That is, take a screenshot of everything you see.
   , ((modMask .|. controlMask .|. shiftMask, xK_p),
      spawn "/home/sarunas/.xmonad/bin/screenshot")
-
-  -- Eject CD tray.
-  , ((0, 0x1008FF2C),
-     spawn "eject -T")
 
   --------------------------------------------------------------------
   -- "Standard" xmonad key bindings
@@ -234,11 +228,11 @@ myKeys conf@(XConfig {XMonad.modMask = modMask}) = M.fromList $
 
   -- Quit xmonad.
   , ((modMask .|. shiftMask, xK_q),
-     spawn "mate-session-save --kill")
+     killAndExit)
 
   -- Restart xmonad.
   , ((modMask, xK_q),
-     restart "xmonad" True)
+     killAndRestart)
   ]
 
   ++
@@ -263,6 +257,9 @@ myKeys conf@(XConfig {XMonad.modMask = modMask}) = M.fromList $
   [((m .|. modMask, key), screenWorkspace sc >>= flip whenJust (windows . f))
       | (key, sc) <- zip [xK_w, xK_e, xK_r] [0..]
       , (f, m) <- [(W.view, 0), (W.shift, shiftMask)]]
+  where
+    killAndExit = io (exitWith ExitSuccess)
+    killAndRestart = (restart "xmonad" True)
  
  
 ------------------------------------------------------------------------
@@ -317,9 +314,16 @@ myStartupHook = return ()
 -- Run xmonad with all the defaults we set up.
 --
 main = do
+  spawn "taffybar"
+  spawn "nitrogen --restore"
+  spawn "gnome-settings-daemon"
+  spawn "gnome-screensaver"
+  spawn "nm-applet"
+  spawn "gnome-sound-applet"
+  spawn "redshift -l 51.48:0.08"
   xmonad $ myDefaults {
       manageHook = manageDocks <+> myManageHook
-      , startupHook = setWMName "LG3D"
+      -- , startupHook = setWMName "LG3D"
   }
  
 

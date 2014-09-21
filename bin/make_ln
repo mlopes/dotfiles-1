@@ -29,7 +29,11 @@ mkdir -p ~/.config/fish
 ln -fs $DOTDIR/rc/config.fish ~/.config/fish/
 
 pushd ~/.xmonad/
-. ~/.xmonad/build_threaded
+export PATH="$HOME/.xmonad/.cabal-sandbox/bin:~/.cabal/bin/cabal:$PATH"
+cabal sandbox init
+cabal update
+cabal install xmonad xmonad-contrib xmonad-extras xmonad-utils
+bash ./build_threaded
 popd
 
 if which xrdb >>/dev/null ; then
