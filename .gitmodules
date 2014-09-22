@@ -94,3 +94,6 @@
 [submodule "vim/bundle/lusty"]
 	path = vim/bundle/lusty
 	url = https://github.com/sjbach/lusty.git
+[submodule "xmonad/deps/dmenu"]
+	path = xmonad/deps/dmenu
+	url = https://github.com/svalaskevicius/dmenu.git
