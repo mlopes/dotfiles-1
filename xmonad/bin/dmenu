@@ -5,4 +5,4 @@
 
 
 $HOME/.xmonad/deps/dmenu/dmenu -fn 'Source Code Pro-24' \
-  -nb '#203040' -nf '#e0e590' -sb '#102030' -sf '#e5e080'
+  -nb '#203040' -nf '#e0e590' -sb '#102030' -sf '#f5a080'
