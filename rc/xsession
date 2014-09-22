@@ -1,0 +1,28 @@
+#!/bin/bash
+
+export PATH="$HOME/.xmonad/.cabal-sandbox/bin:$HOME/.xmonad/bin:$HOME/.cabal/bin:$PATH"
+
+# hack for xsession resetting it - wait a bit and set afterwards
+( sleep 3; setxkbmap -layout gb -variant mac ) &
+
+# disable touchpad while typing
+# syndaemon -R -t -K -i 1 -d
+# enable horiz scrolling 
+synclient HorizTwoFingerScroll=1
+# disable tap to click
+synclient TapButton1=0
+synclient TapButton2=0
+synclient TapButton3=0
+# "natural" scrolling
+synclient VertScrollDelta=-237
+synclient HorizScrollDelta=-237
+
+gnome-settings-daemon &
+gnome-screensaver &
+nm-applet &
+gnome-sound-applet &
+redshift -l 51.48:0.08 &
+
+eval `gnome-keyring-daemon`
+
+exec xmonad

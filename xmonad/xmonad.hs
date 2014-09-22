@@ -314,13 +314,8 @@ myStartupHook = return ()
 -- Run xmonad with all the defaults we set up.
 --
 main = do
-  spawn "taffybar"
+  spawn "sh -c 'cd $HOME/.xmonad/ && cabal exec taffybar'"
   spawn "nitrogen --restore"
-  spawn "gnome-settings-daemon"
-  spawn "gnome-screensaver"
-  spawn "nm-applet"
-  spawn "gnome-sound-applet"
-  spawn "redshift -l 51.48:0.08"
   xmonad $ myDefaults {
       manageHook = manageDocks <+> myManageHook
       -- , startupHook = setWMName "LG3D"

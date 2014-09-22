@@ -23,6 +23,7 @@ ln -Tnfs $DOTDIR/urxvt               ~/.urxvt
 ln -Tnfs $DOTDIR/xmonad              ~/.xmonad
 ln -nfs $DOTDIR/rc/bashrc            ~/.bashrc
 ln -nfs $DOTDIR/rc/Xdefaults         ~/.Xdefaults
+ln -nfs $DOTDIR/rc/xsession          ~/.xsession
 ln -nfs $DOTDIR/rc/xsessionrc        ~/.xsessionrc
 
 mkdir -p ~/.config/fish
