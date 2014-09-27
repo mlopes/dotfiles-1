@@ -25,4 +25,7 @@ redshift -l 51.48:0.08 &
 
 eval `gnome-keyring-daemon`
 
+# allow root cron to send notifications
+xhost +si:localuser:root
+
 exec xmonad
