@@ -17,8 +17,8 @@ synclient TapButton3=0
 synclient VertScrollDelta=-237
 synclient HorizScrollDelta=-237
 
-gnome-settings-daemon &
 gnome-screensaver &
+gnome-settings-daemon &
 nm-applet &
 gnome-sound-applet &
 redshift -l 51.48:0.08 &
