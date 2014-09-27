@@ -1,11 +1,26 @@
 #!/bin/bash
 
-gnome-screensaver-command -l &
-(
-    sleep 60
-    IDLE=$(xssstate -i)
-    if test "$IDLE" -gt 50000 ; then
-        xset dpms force off
-    fi
-) &
+function is_monitor_on() {
+    xset q | grep 'Monitor is On' >/dev/null
+    return $?
+}
 
+function is_screensaver_active() {
+    gnome-screensaver-command -q | grep 'The screensaver is active' >/dev/null
+    return "$?"
+}
+
+function turn_monitor_off_after() 
+{
+    TIMEOUT_s="$1"
+    sleep "$TIMEOUT_s"
+    is_screensaver_active || return 1
+    is_monitor_on && xset dpms force off
+    return 0
+}
+
+
+is_monitor_on && (
+    gnome-screensaver-command -l &
+    turn_monitor_off_after 60 &
+)
