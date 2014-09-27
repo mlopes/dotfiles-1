@@ -17,6 +17,7 @@ synclient TapButton3=0
 synclient VertScrollDelta=-237
 synclient HorizScrollDelta=-237
 
+xautolock -time 3 -locker /home/sarunas/bin/dotfiles/scripts/savescreen &
 gnome-screensaver &
 gnome-settings-daemon &
 nm-applet &

@@ -1,0 +1,11 @@
+#!/bin/bash
+
+gnome-screensaver-command -l &
+(
+    sleep 60
+    IDLE=$(xssstate -i)
+    if test "$IDLE" -gt 50000 ; then
+        xset dpms force off
+    fi
+) &
+
