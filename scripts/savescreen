@@ -10,7 +10,7 @@ function is_screensaver_active() {
     return "$?"
 }
 
-function turn_monitor_off_after() 
+function turn_monitor_off_after()
 {
     TIMEOUT_s="$1"
     sleep "$TIMEOUT_s"
