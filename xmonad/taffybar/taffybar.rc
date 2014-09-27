@@ -1,0 +1,15 @@
+style "tbdefault" {
+    bg[NORMAL]   = "#353835"
+    fg[NORMAL]   = "#808580"
+    text[NORMAL] = "#555555"
+}
+
+style "notification-button" = "tbdefault" {
+    text[NORMAL] = "#FF0000"
+    fg[NORMAL]   = "#FF0000"
+}
+
+widget "Taffybar*" style "tbdefault"
+widget "*NotificationCloseButton" style "notification-button"
+gtk-font-name="Source Code Pro 10"
+

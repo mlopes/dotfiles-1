@@ -21,6 +21,7 @@ ln -nfs $DOTDIR/rc/gitignore_global ~/.gitignore_global
 
 ln -Tnfs $DOTDIR/urxvt               ~/.urxvt
 ln -Tnfs $DOTDIR/xmonad              ~/.xmonad
+ln -Tnfs $DOTDIR/xmonad/taffybar     ~/.config/taffybar
 ln -nfs $DOTDIR/rc/bashrc            ~/.bashrc
 ln -nfs $DOTDIR/rc/Xdefaults         ~/.Xdefaults
 ln -nfs $DOTDIR/rc/xsession          ~/.xsession
