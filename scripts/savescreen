@@ -1,8 +1,9 @@
 #!/bin/bash
 
 function is_monitor_on() {
-    xset q | grep 'Monitor is On' >/dev/null
-    return $?
+    xset q | grep 'Monitor is On' >/dev/null || return 1
+    cat /proc/acpi/button/lid/LID0/state | grep 'open' >/dev/null || return 1
+    return 0
 }
 
 function is_screensaver_active() {
@@ -15,12 +16,13 @@ function turn_monitor_off_after()
     TIMEOUT_s="$1"
     sleep "$TIMEOUT_s"
     is_screensaver_active || return 1
-    is_monitor_on && xset dpms force off
+    is_monitor_on && ( date ; echo "dpms off" ; xset dpms force off) >> /tmp/saverlog
     return 0
 }
 
 
 is_monitor_on && (
+    (date ; echo "lock") >> /tmp/saverlog
     gnome-screensaver-command -l &
     turn_monitor_off_after 60 &
 )
