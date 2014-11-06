@@ -36,18 +36,5 @@ end
 alias !=xdg-open
 alias !bev='bundle exec vagrant'
 
-function git -d "git wrapper"
-    set -l p (pwd)
-    while test "$p" != "$HOME" -a "$p" != "/" ;
-        if test -e "$p/.gitemail"
-            set -x GIT_AUTHOR_EMAIL (cat "$p/.gitemail")
-            set -x GIT_COMMITTER_EMAIL (cat "$p/.gitemail")
-            break
-        end
-        set -l p (dirname "$p")
-    end
-    /usr/bin/git $argv
-end
-
 alias g=git
 
