@@ -8,5 +8,11 @@ let myColourPrefs = HsColour.defaultColourPrefs { HsColour.conid = [HsColour.For
 let myPrint = putStrLn . HsColour.hscolour (HsColour.TTYg HsColour.XTerm256Compatible) myColourPrefs False False "" False . IPPrint.pshow
 
 :set -interactive-print=myPrint
+
 :set -XNoMonomorphismRestriction
-:set prompt "[32;1m(\\[37;1m>[0m "
+
+:set prompt "\ESC[34mλ: \ESC[m"
+
+:def hoogle \x -> return $ ":!hoogle \""        ++ x ++ "\""
+:def doc    \x -> return $ ":!hoogle --info \"" ++ x ++ "\""
+
