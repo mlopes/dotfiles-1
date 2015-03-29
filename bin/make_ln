@@ -17,6 +17,8 @@ ln -nfs $DOTDIR/vim/gvimrc ~/.gvimrc
 ln -nfs $DOTDIR/emacs      ~/.emacs.d
 ln -nfs $DOTDIR/rc/spacemacs      ~/.spacemacs
 
+ln -nfs $DOTDIR/hammerspoon      ~/.hammerspoon
+
 # ln -nfs $DOTDIR/rc/zshrc            ~/.zshrc
 ln -nfs $DOTDIR/rc/tmux.conf        ~/.tmux.conf
 ln -nfs $DOTDIR/rc/npmrc            ~/.npmrc
