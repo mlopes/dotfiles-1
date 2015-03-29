@@ -97,3 +97,6 @@
 [submodule "xmonad/deps/dmenu"]
 	path = xmonad/deps/dmenu
 	url = https://github.com/svalaskevicius/dmenu.git
+[submodule "emacs"]
+	path = emacs
+	url = http://github.com/syl20bnr/spacemacs
