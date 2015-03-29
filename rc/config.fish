@@ -1,5 +1,5 @@
 if status --is-login
-	for p in /usr/bin /usr/local/bin /opt/local/bin ~/bin ~/.config/fish/bin ~/bin/dotfiles/scripts ~/.cabal/bin ~/.xmonad/bin ~/.gem/ruby/1.9.1/bin ~/bin/nest/bin
+	for p in /usr/bin /usr/local/bin /opt/local/bin ~/bin ~/.config/fish/bin ~/priv/dotfiles/scripts ~/.cabal/bin ~/Library/Haskell/bin
 		if test -d $p
 			set PATH $p $PATH
 		end

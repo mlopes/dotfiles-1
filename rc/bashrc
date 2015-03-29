@@ -1,11 +1,10 @@
 #!/bin/bash
 
 export EDITOR=vim
-export BROWSER=chromium-browser
+# export BROWSER=chromium-browser
 
-export PATH="$HOME/bin:$PATH"
-export PATH=$PATH:~/.cabal/bin:~/.xmonad/bin
-export PATH=$PATH:~/.gem/ruby/1.9.1/
+export PATH="$HOME/bin:$HOME/priv/dotfiles/scripts:$PATH"
+export PATH=$PATH:~/.cabal/bin:$HOME/Library/Haskell/bin:~/.xmonad/bin
 
 
 . ~/.shell/env

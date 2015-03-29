@@ -19,24 +19,24 @@ ln -nfs $DOTDIR/rc/gitconfig        ~/.gitconfig
 ln -nfs $DOTDIR/rc/gitignore_global ~/.gitignore_global
 # ln -nfs $DOTDIR/rc/teamocil         ~/.teamocil
 
-ln -Tnfs $DOTDIR/urxvt               ~/.urxvt
-ln -Tnfs $DOTDIR/xmonad              ~/.xmonad
-ln -Tnfs $DOTDIR/xmonad/taffybar     ~/.config/taffybar
+# ln -Tnfs $DOTDIR/urxvt               ~/.urxvt
+# ln -Tnfs $DOTDIR/xmonad              ~/.xmonad
+# ln -Tnfs $DOTDIR/xmonad/taffybar     ~/.config/taffybar
 ln -nfs $DOTDIR/rc/bashrc            ~/.bashrc
-ln -nfs $DOTDIR/rc/Xdefaults         ~/.Xdefaults
-ln -nfs $DOTDIR/rc/xsession          ~/.xsession
-ln -nfs $DOTDIR/rc/xsessionrc        ~/.xsessionrc
+# ln -nfs $DOTDIR/rc/Xdefaults         ~/.Xdefaults
+# ln -nfs $DOTDIR/rc/xsession          ~/.xsession
+# ln -nfs $DOTDIR/rc/xsessionrc        ~/.xsessionrc
 
 mkdir -p ~/.config/fish
 ln -fs $DOTDIR/rc/config.fish ~/.config/fish/
 
-pushd ~/.xmonad/
-export PATH="$HOME/.xmonad/.cabal-sandbox/bin:~/.cabal/bin/cabal:$PATH"
-cabal sandbox init
-cabal update
-cabal install xmonad xmonad-contrib xmonad-extras xmonad-utils
-bash ./build_threaded
-popd
+# pushd ~/.xmonad/
+# export PATH="$HOME/.xmonad/.cabal-sandbox/bin:~/.cabal/bin/cabal:$PATH"
+# cabal sandbox init
+# cabal update
+# cabal install xmonad xmonad-contrib xmonad-extras xmonad-utils
+# bash ./build_threaded
+# popd
 
 if which xrdb >>/dev/null ; then
     xrdb merge ~/.Xdefaults
@@ -54,13 +54,13 @@ fi
 #    sudo ln -nfs $DOTDIR/rc/apache/autohosts.conf /etc/apache2/users/autohosts.conf
 # fi
 
-mkdir -p ~/.fonts/
-ln -fs $DOTDIR/powerline/font/PowerlineSymbols.otf ~/.fonts/
+# mkdir -p ~/.fonts/
+# ln -fs $DOTDIR/powerline/font/PowerlineSymbols.otf ~/.fonts/
 
-mkdir -p ~/.config/fontconfig/conf.d/
-ln -fs $DOTDIR/powerline/font/10-powerline-symbols.conf ~/.config/fontconfig/conf.d/
+# mkdir -p ~/.config/fontconfig/conf.d/
+# ln -fs $DOTDIR/powerline/font/10-powerline-symbols.conf ~/.config/fontconfig/conf.d/
 
-fc-cache -vf ~/.fonts
+# fc-cache -vf ~/.fonts
 
 # for mate 1.6:
 # gsettings set org.mate.session.required-components windowmanager xmonad
