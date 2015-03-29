@@ -8,6 +8,8 @@ local screen = require "hs.screen"
 local grid = require "hs.grid"
 local hints = require "hs.hints"
 local appfinder = require "hs.appfinder"
+local appwatcher = require "hs.application.watcher"
+local timer = require "hs.timer"
 
 function notify(message)
     hs.notify.new({title="Hammerspoon", informativeText=message}):send():release()
@@ -54,6 +56,7 @@ function focusSaved()
 end
 
 local hotkeys = {}
+local layout2
 
 function createHotkeys()
   for key, fun in pairs(definitions) do
@@ -80,7 +83,17 @@ end
 function applyPlace(win, place)
   local scrs = screen:allScreens()
   local scr = scrs[place[1]]
+  if not scr then scr = scrs[1] end
   grid.set(win, place[2], scr)
+end
+
+function applyPlaceToApp(app, place)
+  local ret = false
+  for i, win in ipairs(app:allWindows()) do
+    applyPlace(win, place)
+    ret = true
+  end
+  return ret
 end
 
 function applyLayout(layout)
@@ -88,18 +101,35 @@ function applyLayout(layout)
     for appName, place in pairs(layout) do
       local app = appfinder.appFromName(appName)
       if app then
-        for i, win in ipairs(app:allWindows()) do
-          applyPlace(win, place)
-        end
+        applyPlaceToApp(app, place)
       end
     end
   end
 end
 
+function createAppLaunchWatcher()
+  appwatcher.new(function(title, evt, app)
+      if evt == appwatcher.launched then
+        local place = layout2[title]
+        if place then
+          local counter = 0
+          local apptimer = nil
+          apptimer = timer.new(0.005, function()
+                                 counter = counter+1
+                                 if applyPlaceToApp(app, place) or counter > 50  then
+                                   apptimer:stop()
+                                 end
+          end):start()
+        end
+      end
+  end):start()
+end
+
 function init()
   createHotkeys()
   keycodes.inputSourceChanged(rebindHotkeys)
-
+  createAppLaunchWatcher()
+  
   alert.show("Hammerspoon, at your service.")
 end
 
@@ -129,7 +159,7 @@ local fullApps = {
   "Google Chrome Canary", "Eclipse", "Coda 2", "iTunes", "Emacs", "Firefox",
   "Opera Mail"
 }
-local layout2 = {
+layout2 = {
   --Airmail = {1, gomiddle},
   --Spotify = {1, gomiddle},
   --Calendar = {1, gomiddle},
@@ -174,3 +204,5 @@ fnutils.each({
 end)
 
 init()
+
+
