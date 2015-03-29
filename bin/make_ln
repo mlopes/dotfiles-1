@@ -1,6 +1,10 @@
 #!/bin/bash
 
 DOTDIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )/.." && pwd )"
+pushd "$DOTDIR"
+git submodule sync --recursive
+git submodule update --recursive
+popd
 
 mkdir -p ~/.config
 
@@ -9,6 +13,9 @@ ln -nfs $DOTDIR/shell ~/.shell
 ln -nfs $DOTDIR/vim        ~/.vim
 ln -nfs $DOTDIR/vim/vimrc  ~/.vimrc
 ln -nfs $DOTDIR/vim/gvimrc ~/.gvimrc
+
+ln -nfs $DOTDIR/emacs      ~/.emacs.d
+ln -nfs $DOTDIR/rc/spacemacs      ~/.spacemacs
 
 # ln -nfs $DOTDIR/rc/zshrc            ~/.zshrc
 ln -nfs $DOTDIR/rc/tmux.conf        ~/.tmux.conf
