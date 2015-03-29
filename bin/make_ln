@@ -46,7 +46,7 @@ ln -fs $DOTDIR/rc/config.fish ~/.config/fish/
 # popd
 
 if which xrdb >>/dev/null ; then
-    xrdb merge ~/.Xdefaults
+    test -f ~/.Xdefaults && xrdb merge ~/.Xdefaults
 fi
 
 # if [ -d /etc/resolver ]; then
