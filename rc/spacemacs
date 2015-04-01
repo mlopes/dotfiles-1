@@ -121,6 +121,7 @@ layers configuration."
   (global-set-key (kbd "<S-right>") 'evil-window-right)
 
   (add-to-list 'exec-path "~/Library/Haskell/bin/")
+  (add-to-list 'exec-path "~/bin/")
   (add-hook 'haskell-mode-hook 'turn-on-haskell-doc-mode)
   ;; (add-hook 'haskell-mode-hook 'turn-on-haskell-indentation)
   ;; (add-hook 'haskell-mode-hook 'turn-on-haskell-indent)

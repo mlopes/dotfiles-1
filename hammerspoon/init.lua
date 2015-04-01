@@ -44,6 +44,16 @@ local gridset = function(frame)
     end
 end
 
+function hideCurrent()
+  local win = window.focusedWindow()
+  if win then
+    win:application():hide()
+  else
+    alert.show("No focused window.")
+  end
+end
+
+
 auxWin = nil
 function saveFocus()
   auxWin = window.focusedWindow()
@@ -173,7 +183,9 @@ definitions = {
   [";"] = saveFocus,
   a = focusSaved,
 
+--  Down = hideCurrent,
   Down = gridset(gomiddle),
+
   Left = gridset(goleft),
   Up = grid.maximizeWindow,
   Right = gridset(goright),
